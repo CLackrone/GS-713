@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Uniforms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uniforms.each do |uniform| %>
+      <tr>
+        <td><%= uniform.name %></td>
+        <td><%= link_to 'Show', uniform %></td>
+        <td><%= link_to 'Edit', edit_uniform_path(uniform) %></td>
+        <td><%= link_to 'Destroy', uniform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uniform', new_uniform_path %>

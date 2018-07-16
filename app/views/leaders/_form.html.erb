@@ -1,0 +1,22 @@
+<%= form_with(model: leader, local: true) do |form| %>
+  <% if leader.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(leader.errors.count, "error") %> prohibited this leader from being saved:</h2>
+
+      <ul>
+      <% leader.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :leader_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
