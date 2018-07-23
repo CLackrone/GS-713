@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :homes
+  root 'home#home'
   resources :uniforms
   resources :forms
   resources :projects
